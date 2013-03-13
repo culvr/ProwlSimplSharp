@@ -71,7 +71,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProwlSimplSharp\ProwlSimplSharp.csproj">
+    <ProjectReference Include="..\ProwlSimplSharp.csproj">
       <Project>{B9037066-9FEB-4A37-8E15-5AD73C4FB4F7}</Project>
       <Name>ProwlSimplSharp</Name>
     </ProjectReference>

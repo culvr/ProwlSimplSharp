@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProwlSimplSharp", "ProwlSimplSharp.csproj", "{B9037066-9FEB-4A37-8E15-5AD73C4FB4F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProwlSimplSharp.Test", "..\ProwlSimplSharp.Test\ProwlSimplSharp.Test.csproj", "{79CE3278-ACE6-45AE-AD6D-BA5CA238681C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProwlSimplSharp.Test", "Test\ProwlSimplSharp.Test.csproj", "{79CE3278-ACE6-45AE-AD6D-BA5CA238681C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
