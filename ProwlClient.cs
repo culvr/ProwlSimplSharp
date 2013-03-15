@@ -9,19 +9,23 @@ namespace ProwlSimplSharp
     public class ProwlClient : HttpsClient
     { 
         private List<string> _apiKeys;
-        private IProwlParser _parser;
 
         public ProwlClient() : base()
         {
             _apiKeys = new List<string>();
-            _parser = new ProwlXmlParser();
         }
 
 
         public int Send(string app, ushort priority, string url, string subject, string message)
         {
+            if (_apiKeys.Count.Equals(0))
+            {
+                Crestron.SimplSharp.ErrorLog.Error("No API Keys have been addded. Notification not sent.");
+                return -1;
+            }
+
             string apiKeys = String.Join(",", _apiKeys.ToArray());
- 
+
             var parameters = new Dictionary<string, string>()
                {{ "apikey", apiKeys },
                 { "application", app },
@@ -31,23 +35,42 @@ namespace ProwlSimplSharp
                 { "description", message }};
 
             var request = new ProwlRequest("add", parameters);
-            var response = ProwlDispatch(request);
-
-            return response.Code;
+            return ProwlDispatch(request).Code;
         }
 
 
         private IProwlResponse ProwlDispatch(ProwlRequest request)
         {
-            var httpsResponse = TryDispatch(request);
-            var prowlResponse = _parser.Parse(httpsResponse.ContentString);
-            return prowlResponse;    
+            var response = TryDispatch(request);
+
+            if (response.Code.Equals(200))
+            {
+                return new ProwlSuccess() { Code = 200 };
+            }
+            else
+            {
+                return new ProwlError(response.ContentString) { Code = response.Code };
+            }
+        }
+
+        
+        private bool IsValidKeyFormat(string key)
+        {
+            return !String.IsNullOrEmpty(key) && key.Length.Equals(40); // Order important here
         }
 
 
-        public void AddApiKey(string apiKey)
+        public bool AddApiKey(string apiKey)                                                                                                            
         {
-            _apiKeys.Add(apiKey);
+            if (IsValidKeyFormat(apiKey))
+            {
+                _apiKeys.Add(apiKey);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
