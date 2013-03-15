@@ -20,7 +20,6 @@ namespace ProwlSimplSharp
         {
             if (_apiKeys.Count.Equals(0))
             {
-                Crestron.SimplSharp.ErrorLog.Error("No API Keys have been addded. Notification not sent.");
                 return -1;
             }
 

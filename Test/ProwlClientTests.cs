@@ -8,6 +8,19 @@ using ProwlSimplSharp;
 namespace ProwlSimplSharp.Test
 {
     [TestFixture]
+    class WhenSendingRequests
+    {
+        [Test]
+        public void ReturnsNegativeOneWhenThereAreNoKeys()
+        {
+            ProwlClient client = new ProwlClient();
+
+            int expected = -1;
+            int actual = client.Send("app", 0, "app://", "app-subject", "app-message");
+            Assert.AreEqual(expected, actual);
+        }
+    }
+    [TestFixture]
     class WhenAddingApiKeysToProwlClient
     {
         const string ValidKey = "98b1735456b516cd305dfd3460da5d8ed34db1d4";
