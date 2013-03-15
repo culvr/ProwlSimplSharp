@@ -24,7 +24,7 @@ bool status = client.AddKey("YOUR_API_KEY");
 
 
 // Send a message to Prowl
-// You'll get -1 if the key is invalid
+// You'll get -1 if you haven't added any keys
 int http_status = client.Send("Crestron", priority, "Crestron://", "Subject", "Messsage");
 
 ```
