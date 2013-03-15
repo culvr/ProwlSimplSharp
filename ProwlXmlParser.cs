@@ -23,9 +23,7 @@ namespace ProwlSimplSharp
                 if (code.Equals(200))
                 {
                     int remaining = int.Parse(el.Attribute("remaining").Value);
-                    DateTime resetDate = DateTime.Parse(el.Attribute("resetdate").Value);
-
-                    return new ProwlSuccess { Code = code, Remaining = remaining, ResetDateTime = resetDate };
+                    return new ProwlSuccess { Code = code, Remaining = remaining };
                 }
                 else
                 {
@@ -33,9 +31,10 @@ namespace ProwlSimplSharp
                 }
 
             }
-            catch(Exception)
+            catch (Exception e)
             {
-                return new ProwlError(String.Format("Invalid Data: {0}", data));
+                Crestron.SimplSharp.ErrorLog.Error("ProwlXmlParser.Parse", e.ToString());
+                return new ProwlError(String.Format("Invalid Data: {0}", data)) { Code = -999 };
             }
         }
     }
