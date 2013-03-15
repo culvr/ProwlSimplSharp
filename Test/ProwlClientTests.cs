@@ -20,6 +20,8 @@ namespace ProwlSimplSharp.Test
             Assert.AreEqual(expected, actual);
         }
     }
+
+
     [TestFixture]
     class WhenAddingApiKeysToProwlClient
     {
