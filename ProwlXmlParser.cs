@@ -33,7 +33,6 @@ namespace ProwlSimplSharp
             }
             catch (Exception e)
             {
-                Crestron.SimplSharp.ErrorLog.Error("ProwlXmlParser.Parse", e.ToString());
                 return new ProwlError(String.Format("Invalid Data: {0}", data)) { Code = -999 };
             }
         }
