@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Crestron.SimplSharp.Net.Http;
 using Crestron.SimplSharp.Net.Https;
 
 namespace ProwlSimplSharp
@@ -33,42 +34,52 @@ namespace ProwlSimplSharp
                 { "event", subject },
                 { "description", message }};
 
+
             var request = new ProwlRequest("add", parameters);
-            return ProwlDispatch(request).Code;
+            return ProwlDispatch(request);
         }
 
-
-        private IProwlResponse ProwlDispatch(ProwlRequest request)
+        private int ProwlDispatch(ProwlRequest request)
         {
-            var response = TryDispatch(request);
-
-            if (response.Code.Equals(200))
+            HttpsClientResponse response;
+            
+            try
             {
-                return new ProwlSuccess() { Code = 200 };
+                 response = Dispatch(request);
+            }
+            catch (HttpsException)
+            {
+                return 0;
+            }
+            
+            
+            if (response.Code == 200)
+            {
+                return 1;
             }
             else
             {
-                return new ProwlError(response.ContentString) { Code = response.Code };
-            }
+                return response.Code;
+            } 
         }
 
-        
+
         private bool IsValidKeyFormat(string key)
         {
             return !String.IsNullOrEmpty(key) && key.Length.Equals(40); // Order important here
         }
 
 
-        public bool AddApiKey(string apiKey)                                                                                                            
+        public int AddApiKey(string apiKey)                                                                                                            
         {
             if (IsValidKeyFormat(apiKey))
             {
                 _apiKeys.Add(apiKey);
-                return true;
+                return 1;
             }
             else
             {
-                return false;
+                return 0;
             }
         }
     }
