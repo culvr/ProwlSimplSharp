@@ -46,21 +46,12 @@ namespace ProwlSimplSharp
             try
             {
                  response = Dispatch(request);
+                 return response.Code;
             }
             catch (HttpsException)
             {
                 return 0;
             }
-            
-            
-            if (response.Code == 200)
-            {
-                return 1;
-            }
-            else
-            {
-                return response.Code;
-            } 
         }
 
 
