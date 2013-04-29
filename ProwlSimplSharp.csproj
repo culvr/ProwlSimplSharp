@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{B9037066-9FEB-4A37-8E15-5AD73C4FB4F7}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -74,15 +74,9 @@
     <Reference Include="system.drawing" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IProwlParser.cs" />
-    <Compile Include="IProwlResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProwlClient.cs" />
-    <Compile Include="ProwlError.cs" />
     <Compile Include="ProwlRequest.cs" />
-    <Compile Include="ProwlResponse.cs" />
-    <Compile Include="ProwlSuccess.cs" />
-    <Compile Include="ProwlXmlParser.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>

@@ -50,16 +50,17 @@ namespace ProwlSimplSharp.Test
             string too_long =   "98b1735456b516cd305dfd3460da5d8ed34db1d4AA";  // 41
             
             
-            Assert.False(_client.AddApiKey(too_short), LengthMsg(too_short.Length));
-            Assert.True(_client.AddApiKey(just_right), LengthMsg(just_right.Length));
-            Assert.False(_client.AddApiKey(too_long), LengthMsg(too_long.Length));
+            Assert.AreEqual(_client.AddApiKey(too_short), 0, LengthMsg(too_short.Length));
+            Assert.AreEqual(_client.AddApiKey(just_right), 1, LengthMsg(just_right.Length));
+            Assert.AreEqual(_client.AddApiKey(too_long), 0,  LengthMsg(too_long.Length));
         }
+        
 
 
         [Test]
-        public void NullKeysReturnFalse()
+        public void NullKeysReturnsZero()
         {
-            Assert.False(_client.AddApiKey(null));
+            Assert.AreEqual(_client.AddApiKey(null), 0);
         }
     }
 }
