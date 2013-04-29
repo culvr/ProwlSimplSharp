@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Crestron.SimplSharp.Net.Http;
 using Crestron.SimplSharp.Net.Https;
 using Nivloc.Web; // System.Web
 
@@ -9,20 +10,15 @@ namespace ProwlSimplSharp
 {
     public class ProwlRequest : HttpsClientRequest
     {
-        private const string ProwlApiUrl = "api.prowlapp.com/publicapi/";
-        private const string ProwlHttpProtocol = "https";
+        private const string ProwlApiUrl = "https://api.prowlapp.com/publicapi/";
                 
         public ProwlRequest(string method, Dictionary<string, string> kwargs) : base()
         {
-            if (method == "add")
-            {
-                this.RequestType = RequestType.Post;
-            }
+            string url = string.Format("{0}{1}?{2}", ProwlApiUrl, method, EncodeParams(kwargs));
+            Url.Parse(url);
 
-            Url.Hostname = ProwlApiUrl;
-            Url.Protocol = ProwlHttpProtocol;
-            Url.Path = method;
-            Url.Params = EncodeParams(kwargs);
+            RequestType = Crestron.SimplSharp.Net.Https.RequestType.Post;
+            FinalizeHeader();
         }
 
 

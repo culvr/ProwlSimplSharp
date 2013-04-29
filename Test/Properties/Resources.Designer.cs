@@ -59,29 +59,5 @@ namespace ProwlSimplSharp.Test.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-        ///&lt;prowl&gt;
-        ///  &lt;error code=&quot;401&quot;&gt;Bad Request&lt;/error&gt;
-        ///&lt;/prowl&gt;.
-        /// </summary>
-        internal static string ProwlErrorResponseData {
-            get {
-                return ResourceManager.GetString("ProwlErrorResponseData", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-        ///&lt;prowl&gt;
-        ///	&lt;success code=&quot;200&quot; remaining=&quot;1000&quot; resetdate=&quot;2013-03-13+12:00&quot;/&gt;
-        ///&lt;/prowl&gt;.
-        /// </summary>
-        internal static string ProwlSuccessResponseData {
-            get {
-                return ResourceManager.GetString("ProwlSuccessResponseData", resourceCulture);
-            }
-        }
     }
 }
