@@ -46,16 +46,6 @@ namespace ProwlSimplSharp.Test
 
 
         [Test]
-        public void HttpGetForNonAddRequests()
-        {
-            var expected = RequestType.Get;
-            var request = new ProwlRequest("other", EmptyDictionary());
-            var actual = request.RequestType;
-            Assert.AreEqual(expected, actual);
-        }
-
-
-        [Test]
         public void HttpPostWhenMethodIsAdd()
         {
             var expected = RequestType.Post;

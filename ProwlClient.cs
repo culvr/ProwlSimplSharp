@@ -38,14 +38,13 @@ namespace ProwlSimplSharp
             var request = new ProwlRequest("add", parameters);
             return ProwlDispatch(request);
         }
+        
 
         private int ProwlDispatch(ProwlRequest request)
         {
-            HttpsClientResponse response;
-            
             try
             {
-                 response = Dispatch(request);
+                 HttpsClientResponse response = Dispatch(request);
                  return response.Code;
             }
             catch (HttpsException)
@@ -65,7 +64,10 @@ namespace ProwlSimplSharp
         {
             if (IsValidKeyFormat(apiKey))
             {
-                _apiKeys.Add(apiKey);
+                lock (_apiKeys)
+                {
+                    _apiKeys.Add(apiKey);
+                }
                 return 1;
             }
             else
