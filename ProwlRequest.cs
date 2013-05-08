@@ -37,9 +37,8 @@ namespace ProwlSimplSharp
             {
                 args.Add(String.Format("{0}={1}", HttpUtility.UrlEncode(kvp.Key), HttpUtility.UrlEncode(kvp.Value)));
             }
-
-            string result = string.Join("&", args.ToArray());
-            return string.Format("?{0}", result);
+ 
+            return "?" + string.Join("&", args.ToArray());
         }
     }
 }

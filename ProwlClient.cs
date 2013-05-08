@@ -10,6 +10,7 @@ namespace ProwlSimplSharp
     public class ProwlClient : HttpsClient
     { 
         private List<string> _apiKeys;
+        private object ApiKeysLock = new object();
 
         public ProwlClient() : base()
         {
@@ -64,7 +65,7 @@ namespace ProwlSimplSharp
         {
             if (IsValidKeyFormat(apiKey))
             {
-                lock (_apiKeys)
+                lock (ApiKeysLock)
                 {
                     _apiKeys.Add(apiKey);
                 }
