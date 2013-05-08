@@ -18,17 +18,29 @@ namespace ProwlSimplSharp
         }
 
 
+        private string ApiKeys
+        {
+            get
+            {
+                lock (ApiKeysLock)
+                {
+                    return string.Join(",", _apiKeys.ToArray());
+                }
+            }
+        }
+
+
         public int Send(string app, ushort priority, string url, string subject, string message)
         {
-            if (_apiKeys.Count.Equals(0))
+            string keys = this.ApiKeys;
+            
+            if (String.IsNullOrEmpty(keys))
             {
                 return -1;
             }
 
-            string apiKeys = String.Join(",", _apiKeys.ToArray());
-
             var parameters = new Dictionary<string, string>()
-               {{ "apikey", apiKeys },
+               {{ "apikey", keys },
                 { "application", app },
                 { "priority", priority.ToString() },
                 { "url", url },
