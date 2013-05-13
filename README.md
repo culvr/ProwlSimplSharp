@@ -10,7 +10,7 @@ Note: This only runs on Crestron Hardware.
 
 * Prowl Account [http://prowlapp.com](http://prowlapp.com)
 * iOS device with the Prowl App ($2.99)
-* 3-Series Processor (v1.007.0001+)
+* 3-Series Processor (v1.007.0014+)
 
 
 ## Usage:
