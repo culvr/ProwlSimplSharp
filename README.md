@@ -19,8 +19,8 @@ Note: This only runs on Crestron Hardware.
 ProwlClient client = new ProwlClient();
 
 // Add a key first, you may add as many as you like
-// It returns false if your key is invalid
-bool status = client.AddKey("YOUR_API_KEY");
+// It returns 0, if your key is invalid
+int status = client.AddKey("YOUR_API_KEY");
 
 
 // Send a message to Prowl
