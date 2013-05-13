@@ -1,0 +1,46 @@
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#ENCODING_ASCII
+#USER_SIMPLSHARP_LIBRARY "ProwlSimplSharp"
+
+#DEFINE_CONSTANT MAX_API_KEYS 10
+
+DIGITAL_INPUT Send, _skip_;
+ANALOG_INPUT priority;
+STRING_INPUT application$[256], url$[512], event$[1024], description$[1000];
+
+
+STRING_PARAMETER ApiKeys[MAX_API_KEYS][40];
+
+ProwlClient prowl;
+
+function AddApiKeys()
+{
+ 	integer i;
+
+	for(i = 1 to MAX_API_KEYS)
+	{ 
+		if(isParameterDefined(ApiKeys[i]))
+		{
+			prowl.AddApiKey(ApiKeys[i]);
+		}
+		else
+		{
+			break;
+		}
+	}
+}   
+
+push Send
+{
+	integer status;
+	status = prowl.Send(application$, priority, url$, event$, description$);
+	print("Status: %d", status);
+}
+
+function main()
+{
+	AddApiKeys();
+}
+
