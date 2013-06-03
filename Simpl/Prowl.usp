@@ -10,8 +10,7 @@ DIGITAL_INPUT Send, _skip_;
 ANALOG_INPUT priority;
 STRING_INPUT application$[256], url$[512], event$[1024], description$[1000];
 
-
-STRING_PARAMETER ApiKeys[MAX_API_KEYS][40];
+STRING_PARAMETER _SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_, ApiKeys[MAX_API_KEYS][40];
 
 ProwlClient prowl;
 
