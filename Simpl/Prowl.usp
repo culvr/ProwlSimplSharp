@@ -8,6 +8,60 @@
 #USER_SIMPLSHARP_LIBRARY "ProwlSimplSharp"
 #DEFINE_CONSTANT MAX_API_KEYS 10
 
+#HELP_BEGIN
+Simpl Windows Name: Prowl Client
+
+Summary: Send custom Prowl messages to iOS devices and programs listed at www.prowlapp.com/apps.php
+Minimum Firmware: 3-Series(v1.007.0019+)
+
+
+SETUP:	
+
+1. Go to 'www.prowlapp.com'
+2. Create a unique login for each client project.
+3. Go to the "API Key" tab and generate a new API key.
+4. Copy your 40 digit API Key and paste to this modules parameter field.
+5. Install any Prowl compatible apps, plugins and/or services from the website.
+6. Use the same unique login from Step 2.
+
+TIPS: 
+
+1. Go to iOS settings > Notifications > Prowl > Alert Style. Change to 'Alerts'.
+2. Go to the Prowl App settings in the iOS app and turn on 'Absolute Timestamps'.
+3. A priority level of 2 will bypass Quiet Hours in settings.
+
+NOTES: The 'Description$' SERIAL input is optional and will produce a different alert styles.  Without
+a Description$, the Application$ will be on Line 1 and the Event$ will be on Line 2.  With a Description$,
+the Application$ and Event$ will be on Line 1 with a '-' separating them and Description$ will be on Line 2.
+
+
+INPUT DESCRIPTIONS:
+
+NAME            TYPE    DESCRIPTION
+Send             D      Pulse to transmit current message
+Priority         A      [OPTIONAL] Range from (0d to 2d)
+Application$     S      Name of Application sending the message
+Event$           S      Name of Event
+Description$     S      [OPTIONAL] See Description...
+URL$             S      [OPTIONAL] A webpage link or iOS app handle i.e. 'Crestron://'
+                       
+
+OUTPUT DESCRIPTIONS:
+
+NAME            TYPE    DESCRIPTION
+Status           A      [OPTIONAL] Errorcode per prowl API
+Status_Message$  S      [OPTIONAL] Verbose Errorcode descriptions per prowl API 
+   
+
+PARAMETER DESCRIPTIONS:
+
+NAME            TYPE    DESCRIPTION	
+ApiKeys          S      40 digit hex API Key from www.prowlapp.com
+
+#HELP_END
+
+
+
 DIGITAL_INPUT Send, _skip_;
 ANALOG_INPUT Priority;
 STRING_INPUT Application$[256], Url$[512], Event$[1024], Description$[1000];

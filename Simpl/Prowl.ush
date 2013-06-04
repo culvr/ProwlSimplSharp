@@ -10,6 +10,38 @@
   CrossCplrVrs=1.3
 [END]
 [BEGIN]
+  ObjTp=Hd
+  Cmn1=Simpl Windows Name: Prowl Client\\\\Summary: Send custom Prowl messages||1
+  Cmn2=to iOS devices and programs listed at www.prowlapp.com/apps.php\\
+  Cmn3=Minimum Firmware: 3-Series(v1.007.0019+)\\\\\\SETUP:	\\\\1. Go to||1
+  Cmn4='www.prowlapp.com'\\2. Create a unique login for each client project.
+  Cmn5=\\3. Go to the "API Key" tab and generate a new API key.\\4. Copy||1
+  Cmn6=your 40 digit API Key and paste to this modules parameter field.
+  Cmn7=\\5. Install any Prowl compatible apps, plugins and/or services||1
+  Cmn8=from the website.\\6. Use the same unique login from Step 2.\\\\
+  Cmn9=TIPS: \\\\1. Go to iOS settings > Notifications > Prowl > Alert||1
+  Cmn10=Style. Change to 'Alerts'.\\2. Go to the Prowl App settings in the||1
+  Cmn11=iOS app and turn on 'Absolute Timestamps'.\\3. A priority level||1
+  Cmn12=of 2 will bypass Quiet Hours in settings.\\\\NOTES: The 'Description$'||1
+  Cmn13=SERIAL input is optional and will produce a different alert styles.
+  Cmn14=||2Without\\a Description$, the Application$ will be on Line 1 and||1
+  Cmn15=the Event$ will be on Line 2.  With a Description$,\\the Application$||1
+  Cmn16=and Event$ will be on Line 1 with a '-' separating them and Description$||1
+  Cmn17=will be on Line 2.\\\\\\INPUT DESCRIPTIONS:\\\\NAME            TYPE||1
+  Cmn18=||3DESCRIPTION\\Send             D      Pulse to transmit current||1
+  Cmn19=message\\Priority         A      [OPTIONAL] Range from (0d to 2d)\\
+  Cmn20=Application$     S      Name of Application sending the message\\
+  Cmn21=Event$           S      Name of Event\\Description$     S      [OPTIONAL]||1
+  Cmn22=See Description...\\URL$             S      [OPTIONAL] A webpage||1
+  Cmn23=link or iOS app handle i.e. 'Crestron://'\\||E
+  Cmn24=||2\\\\OUTPUT DESCRIPTIONS:\\\\NAME            TYPE    DESCRIPTION\\
+  Cmn25=Status           A      [OPTIONAL] Errorcode per prowl API\\Status_Message$||1
+  Cmn26=||1S      [OPTIONAL] Verbose Errorcode descriptions per prowl API||1
+  Cmn27=\\   \\\\PARAMETER DESCRIPTIONS:\\\\NAME            TYPE    DESCRIPTION	
+  Cmn28=\\ApiKeys          S      40 digit hex API Key from www.prowlapp.
+  Cmn29=com\\
+[END]
+[BEGIN]
   ObjTp=Symbol
   Exclusions=1,19,20,21,88,89,167,168,179,213,214,215,216,217,225,226,248,249,266,267,310,362,378,380,405,407,408,409,478,522,537,554,586,590,611,624,718,756,767,830,841,842,854,883,955,1032,1062,1079,1128,1129,1134,1140,1157,1158,1195,1199,1220,1221,1222,1223,1299,1348,1349,1439,1472,1473,1499,1746,1803,1975,2229,2354,2514,2523,2532,2706,2707,3235,3236,3427,3454,3567,3568,3601,3602,
   Exclusions_CDS=5
