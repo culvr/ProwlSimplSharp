@@ -7,10 +7,13 @@
 #DEFINE_CONSTANT MAX_API_KEYS 10
 
 DIGITAL_INPUT Send, _skip_;
-ANALOG_INPUT priority;
-STRING_INPUT application$[256], url$[512], event$[1024], description$[1000];
+ANALOG_INPUT Priority;
+STRING_INPUT Application$[256], Url$[512], Event$[1024], Description$[1000];
 
-STRING_PARAMETER _SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_, ApiKeys[MAX_API_KEYS][40];
+ANALOG_OUTPUT 	_SKIP_,_SKIP_, Status;
+STRING_OUTPUT 	Status_Message$;
+
+STRING_PARAMETER _SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_, ApiKeys[MAX_API_KEYS][40];
 
 ProwlClient prowl;
 
@@ -34,8 +37,18 @@ function AddApiKeys()
 push Send
 {
 	integer status;
-	status = prowl.Send(application$, priority, url$, event$, description$);
-	print("Status: %d", status);
+	
+	status = prowl.Send(Application$, Priority, URL$, Event$, Description$);
+	
+	cswitch(status)
+	{
+		case(200): {Status_Message$ = "Success!"; break;}
+		case(400): {Status_Message$ = "Bad request, the parameters you provided did not validate."; break;}
+		case(401): {Status_Message$ = "Not authorized, the API key given is not valid, and does not correspond to a user."; break;}
+		case(406): {Status_Message$ = "Not acceptable, your IP address has exceeded the API limit."; break;}
+		case(409): {Status_Message$ = "Not approved, the user has yet to approve your retrieve request."; break;}
+		case(500): {Status_Message$ = "Internal server error, something failed to execute properly on the Prowl side."; break;}
+	}
 }
 
 function main()

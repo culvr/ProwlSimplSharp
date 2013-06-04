@@ -23,47 +23,71 @@
   InputSigType1=Digital
   InputCue2=[~UNUSED~]
   InputSigType2=Digital
-  InputList2Cue1=priority
+  InputList2Cue1=Priority
   InputList2SigType1=Analog
-  InputList2Cue2=application$
+  InputList2Cue2=Application$
   InputList2SigType2=Serial
-  InputList2Cue3=url$
+  InputList2Cue3=Url$
   InputList2SigType3=Serial
-  InputList2Cue4=event$
+  InputList2Cue4=Event$
   InputList2SigType4=Serial
-  InputList2Cue5=description$
+  InputList2Cue5=Description$
   InputList2SigType5=Serial
+  OutputList2Cue1=[~UNUSED~]
+  OutputList2SigType1=Analog
+  OutputList2Cue2=[~UNUSED~]
+  OutputList2SigType2=Analog
+  OutputList2Cue3=Status
+  OutputList2SigType3=Analog
+  OutputList2Cue4=Status_Message$
+  OutputList2SigType4=Serial
   ParamCue1=[Reference Name]
-  ParamCue2=ApiKeys[1]
-  ParamSigType2=String
-  ParamCue3=ApiKeys[2]
-  ParamSigType3=String
-  ParamCue4=ApiKeys[3]
-  ParamSigType4=String
-  ParamCue5=ApiKeys[4]
-  ParamSigType5=String
-  ParamCue6=ApiKeys[5]
-  ParamSigType6=String
-  ParamCue7=ApiKeys[6]
-  ParamSigType7=String
-  ParamCue8=ApiKeys[7]
-  ParamSigType8=String
-  ParamCue9=ApiKeys[8]
-  ParamSigType9=String
-  ParamCue10=ApiKeys[9]
+  ParamCue2=[~UNUSED~]
+  ParamSigType2=Constant
+  ParamCue3=[~UNUSED~]
+  ParamSigType3=Constant
+  ParamCue4=[~UNUSED~]
+  ParamSigType4=Constant
+  ParamCue5=[~UNUSED~]
+  ParamSigType5=Constant
+  ParamCue6=[~UNUSED~]
+  ParamSigType6=Constant
+  ParamCue7=[~UNUSED~]
+  ParamSigType7=Constant
+  ParamCue8=[~UNUSED~]
+  ParamSigType8=Constant
+  ParamCue9=[~UNUSED~]
+  ParamSigType9=Constant
+  ParamCue10=ApiKeys[1]
   ParamSigType10=String
-  ParamCue11=ApiKeys[10]
+  ParamCue11=ApiKeys[2]
   ParamSigType11=String
+  ParamCue12=ApiKeys[3]
+  ParamSigType12=String
+  ParamCue13=ApiKeys[4]
+  ParamSigType13=String
+  ParamCue14=ApiKeys[5]
+  ParamSigType14=String
+  ParamCue15=ApiKeys[6]
+  ParamSigType15=String
+  ParamCue16=ApiKeys[7]
+  ParamSigType16=String
+  ParamCue17=ApiKeys[8]
+  ParamSigType17=String
+  ParamCue18=ApiKeys[9]
+  ParamSigType18=String
+  ParamCue19=ApiKeys[10]
+  ParamSigType19=String
   MinVariableInputs=2
   MaxVariableInputs=2
   MinVariableInputsList2=5
   MaxVariableInputsList2=5
   MinVariableOutputs=0
   MaxVariableOutputs=0
-  MinVariableOutputsList2=0
-  MaxVariableOutputsList2=0
-  MinVariableParams=1
-  MaxVariableParams=10
+  MinVariableOutputsList2=4
+  MaxVariableOutputsList2=4
+  MinVariableParams=9
+  MaxVariableParams=18
   Expand=expand_separately
   Expand2=expand_separately
   ProgramTree=Logic
@@ -78,17 +102,17 @@
   CompilerParamCode5=14
   NumFixedParams=1
   Pp1=1
-  Pp2=2
-  Pp3=3
-  Pp4=4
-  Pp5=5
-  Pp6=6
-  Pp7=7
-  Pp8=8
-  Pp9=9
   Pp10=10
   Pp11=11
-  MPp=11
+  Pp12=12
+  Pp13=13
+  Pp14=14
+  Pp15=15
+  Pp16=16
+  Pp17=17
+  Pp18=18
+  Pp19=19
+  MPp=19
   NVStorage=10
   ParamSigType1=String
   SmplCInputCue1=o#
@@ -109,70 +133,6 @@
 [END]
 [BEGIN]
   ObjTp=Dp
-  H=2
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=3
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=4
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=5
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=6
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=7
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=8
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=9
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
   H=10
   Tp=1
   HD=False
@@ -182,6 +142,70 @@
 [BEGIN]
   ObjTp=Dp
   H=11
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=12
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=13
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=14
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=15
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=16
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=17
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=18
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=19
   Tp=1
   HD=False
   NoS=False
