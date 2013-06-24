@@ -88,5 +88,13 @@ namespace ProwlSimplSharp
                 return 0;
             }
         }
+
+        public void RemoveApiKey(string key)
+        {
+            lock (ApiKeysLock)
+            {
+                _apiKeys.Remove(key);
+            }
+        }
     }
 }
