@@ -38,12 +38,14 @@ the Application$ and Event$ will be on Line 1 with a '-' separating them and Des
 INPUT DESCRIPTIONS:
 
 NAME            TYPE    DESCRIPTION
-Send             D      Pulse to transmit current message
+Send             D      Pulse to transmit current message to enabled keys.
 Priority         A      [OPTIONAL] Range from (0d to 2d)
 Application$     S      Name of Application sending the message
 Event$           S      Name of Event
 Description$     S      [OPTIONAL] See Description...
 URL$             S      [OPTIONAL] A webpage link or iOS app handle i.e. 'Crestron://'
+
+EnableKey[x]     D      Rising edge Adds ApiKeys[x], Falling edge removes ApiKeys[x] (Only ApiKeys that are enabled will be sent.)
                        
 
 OUTPUT DESCRIPTIONS:
@@ -62,33 +64,56 @@ ApiKeys          S      40 digit hex API Key from www.prowlapp.com
 
 
 
-DIGITAL_INPUT Send, _skip_;
+DIGITAL_INPUT _SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_, _SKIP_,_SKIP_, Send, _skip_;
 ANALOG_INPUT Priority;
-STRING_INPUT Application$[256], Url$[512], Event$[1024], Description$[1000];
 
-ANALOG_OUTPUT 	_SKIP_,_SKIP_, Status;
+STRING_INPUT _skip_,Application$[256], Url$[512], Event$[1024], Description$[1000];
+
+DIGITAL_INPUT EnableKey[MAX_API_KEYS], _SKIP_;
+
+
+ANALOG_OUTPUT 	_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_, _SKIP_,_SKIP_, Status;
 STRING_OUTPUT 	Status_Message$;
 
-STRING_PARAMETER _SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_, ApiKeys[MAX_API_KEYS][40];
+STRING_PARAMETER  ApiKeys[MAX_API_KEYS][40];
 
 ProwlClient prowl;
+ 
 
-function AddApiKeys()
+function AddApiKey(integer index)
 {
- 	integer i;
-
-	for(i = 1 to MAX_API_KEYS)
-	{ 
-		if(isParameterDefined(ApiKeys[i]))
-		{
-			prowl.AddApiKey(ApiKeys[i]);
-		}
-		else
-		{
-			break;
-		}
+	if(isParameterDefined(ApiKeys[index]))
+	{
+		prowl.AddApiKey(ApiKeys[index]);
 	}
-}   
+}
+
+
+function RemoveApiKey(integer index)
+{
+	if(isParameterDefined(ApiKeys[index]))
+	{
+		prowl.RemoveApiKey(ApiKeys[index]);
+	}
+}
+
+push EnableKey
+{
+	integer index;
+	
+	index = GetLastModifiedArrayIndex();
+	AddApiKey(index);
+}
+
+
+release EnableKey
+{
+	integer index;
+	
+	index = GetLastModifiedArrayIndex();	
+	RemoveApiKey(index);
+}
+  
 
 push Send
 {
@@ -98,6 +123,8 @@ push Send
 	
 	cswitch(status)
 	{
+		case( -1): {Status_Message$ = "Must add at least one key!"; break; }
+		case(  0): {Status_Message$ = "Connection Error."; break; }  
 		case(200): {Status_Message$ = "Success!"; break;}
 		case(400): {Status_Message$ = "Bad request, the parameters you provided did not validate."; break;}
 		case(401): {Status_Message$ = "Not authorized, the API key given is not valid, and does not correspond to a user."; break;}
@@ -109,6 +136,6 @@ push Send
 
 function main()
 {
-	AddApiKeys();
+	WaitForInitializationComplete();
 }
 

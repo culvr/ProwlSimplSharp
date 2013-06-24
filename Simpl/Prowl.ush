@@ -29,17 +29,19 @@
   Cmn16=and Event$ will be on Line 1 with a '-' separating them and Description$||1
   Cmn17=will be on Line 2.\\\\\\INPUT DESCRIPTIONS:\\\\NAME            TYPE||1
   Cmn18=||3DESCRIPTION\\Send             D      Pulse to transmit current||1
-  Cmn19=message\\Priority         A      [OPTIONAL] Range from (0d to 2d)\\
-  Cmn20=Application$     S      Name of Application sending the message\\
-  Cmn21=Event$           S      Name of Event\\Description$     S      [OPTIONAL]||1
-  Cmn22=See Description...\\URL$             S      [OPTIONAL] A webpage||1
-  Cmn23=link or iOS app handle i.e. 'Crestron://'\\||E
-  Cmn24=||2\\\\OUTPUT DESCRIPTIONS:\\\\NAME            TYPE    DESCRIPTION\\
-  Cmn25=Status           A      [OPTIONAL] Errorcode per prowl API\\Status_Message$||1
-  Cmn26=||1S      [OPTIONAL] Verbose Errorcode descriptions per prowl API||1
-  Cmn27=\\   \\\\PARAMETER DESCRIPTIONS:\\\\NAME            TYPE    DESCRIPTION	
-  Cmn28=\\ApiKeys          S      40 digit hex API Key from www.prowlapp.
-  Cmn29=com\\
+  Cmn19=message to enabled keys.\\Priority         A      [OPTIONAL] Range||1
+  Cmn20=from (0d to 2d)\\Application$     S      Name of Application sending||1
+  Cmn21=the message\\Event$           S      Name of Event\\Description$||1
+  Cmn22=||4S      [OPTIONAL] See Description...\\URL$             S||4
+  Cmn23=||2[OPTIONAL] A webpage link or iOS app handle i.e. 'Crestron://'\\
+  Cmn24=\\EnableKey[x]     D      Rising edge Adds ApiKeys[x], Falling edge||1
+  Cmn25=removes ApiKeys[x] (Only ApiKeys that are enabled will be sent.)\\
+  Cmn26=||G\\\\OUTPUT DESCRIPTIONS:\\\\NAME||9
+  Cmn27=||3TYPE    DESCRIPTION\\Status           A      [OPTIONAL] Errorcode||1
+  Cmn28=per prowl API\\Status_Message$  S      [OPTIONAL] Verbose Errorcode||1
+  Cmn29=descriptions per prowl API \\   \\\\PARAMETER DESCRIPTIONS:\\\\NAME||1
+  Cmn30=||;TYPE    DESCRIPTION	\\ApiKeys          S      40 digit||1
+  Cmn31=hex API Key from www.prowlapp.com\\
 [END]
 [BEGIN]
   ObjTp=Symbol
@@ -51,75 +53,119 @@
   Code=1
   SysRev5=4.000
   SMWRev=3.00.00
-  InputCue1=Send
+  InputCue1=[~UNUSED~]
   InputSigType1=Digital
   InputCue2=[~UNUSED~]
   InputSigType2=Digital
+  InputCue3=[~UNUSED~]
+  InputSigType3=Digital
+  InputCue4=[~UNUSED~]
+  InputSigType4=Digital
+  InputCue5=[~UNUSED~]
+  InputSigType5=Digital
+  InputCue6=[~UNUSED~]
+  InputSigType6=Digital
+  InputCue7=[~UNUSED~]
+  InputSigType7=Digital
+  InputCue8=[~UNUSED~]
+  InputSigType8=Digital
+  InputCue9=[~UNUSED~]
+  InputSigType9=Digital
+  InputCue10=[~UNUSED~]
+  InputSigType10=Digital
+  InputCue11=Send
+  InputSigType11=Digital
+  InputCue12=[~UNUSED~]
+  InputSigType12=Digital
+  InputCue13=EnableKey[1]
+  InputSigType13=Digital
+  InputCue14=EnableKey[2]
+  InputSigType14=Digital
+  InputCue15=EnableKey[3]
+  InputSigType15=Digital
+  InputCue16=EnableKey[4]
+  InputSigType16=Digital
+  InputCue17=EnableKey[5]
+  InputSigType17=Digital
+  InputCue18=EnableKey[6]
+  InputSigType18=Digital
+  InputCue19=EnableKey[7]
+  InputSigType19=Digital
+  InputCue20=EnableKey[8]
+  InputSigType20=Digital
+  InputCue21=EnableKey[9]
+  InputSigType21=Digital
+  InputCue22=EnableKey[10]
+  InputSigType22=Digital
+  InputCue23=[~UNUSED~]
+  InputSigType23=Digital
   InputList2Cue1=Priority
   InputList2SigType1=Analog
-  InputList2Cue2=Application$
+  InputList2Cue2=[~UNUSED~]
   InputList2SigType2=Serial
-  InputList2Cue3=Url$
+  InputList2Cue3=Application$
   InputList2SigType3=Serial
-  InputList2Cue4=Event$
+  InputList2Cue4=Url$
   InputList2SigType4=Serial
-  InputList2Cue5=Description$
+  InputList2Cue5=Event$
   InputList2SigType5=Serial
+  InputList2Cue6=Description$
+  InputList2SigType6=Serial
   OutputList2Cue1=[~UNUSED~]
   OutputList2SigType1=Analog
   OutputList2Cue2=[~UNUSED~]
   OutputList2SigType2=Analog
-  OutputList2Cue3=Status
+  OutputList2Cue3=[~UNUSED~]
   OutputList2SigType3=Analog
-  OutputList2Cue4=Status_Message$
-  OutputList2SigType4=Serial
+  OutputList2Cue4=[~UNUSED~]
+  OutputList2SigType4=Analog
+  OutputList2Cue5=[~UNUSED~]
+  OutputList2SigType5=Analog
+  OutputList2Cue6=[~UNUSED~]
+  OutputList2SigType6=Analog
+  OutputList2Cue7=[~UNUSED~]
+  OutputList2SigType7=Analog
+  OutputList2Cue8=[~UNUSED~]
+  OutputList2SigType8=Analog
+  OutputList2Cue9=[~UNUSED~]
+  OutputList2SigType9=Analog
+  OutputList2Cue10=[~UNUSED~]
+  OutputList2SigType10=Analog
+  OutputList2Cue11=Status
+  OutputList2SigType11=Analog
+  OutputList2Cue12=Status_Message$
+  OutputList2SigType12=Serial
   ParamCue1=[Reference Name]
-  ParamCue2=[~UNUSED~]
-  ParamSigType2=Constant
-  ParamCue3=[~UNUSED~]
-  ParamSigType3=Constant
-  ParamCue4=[~UNUSED~]
-  ParamSigType4=Constant
-  ParamCue5=[~UNUSED~]
-  ParamSigType5=Constant
-  ParamCue6=[~UNUSED~]
-  ParamSigType6=Constant
-  ParamCue7=[~UNUSED~]
-  ParamSigType7=Constant
-  ParamCue8=[~UNUSED~]
-  ParamSigType8=Constant
-  ParamCue9=[~UNUSED~]
-  ParamSigType9=Constant
-  ParamCue10=ApiKeys[1]
+  ParamCue2=ApiKeys[1]
+  ParamSigType2=String
+  ParamCue3=ApiKeys[2]
+  ParamSigType3=String
+  ParamCue4=ApiKeys[3]
+  ParamSigType4=String
+  ParamCue5=ApiKeys[4]
+  ParamSigType5=String
+  ParamCue6=ApiKeys[5]
+  ParamSigType6=String
+  ParamCue7=ApiKeys[6]
+  ParamSigType7=String
+  ParamCue8=ApiKeys[7]
+  ParamSigType8=String
+  ParamCue9=ApiKeys[8]
+  ParamSigType9=String
+  ParamCue10=ApiKeys[9]
   ParamSigType10=String
-  ParamCue11=ApiKeys[2]
+  ParamCue11=ApiKeys[10]
   ParamSigType11=String
-  ParamCue12=ApiKeys[3]
-  ParamSigType12=String
-  ParamCue13=ApiKeys[4]
-  ParamSigType13=String
-  ParamCue14=ApiKeys[5]
-  ParamSigType14=String
-  ParamCue15=ApiKeys[6]
-  ParamSigType15=String
-  ParamCue16=ApiKeys[7]
-  ParamSigType16=String
-  ParamCue17=ApiKeys[8]
-  ParamSigType17=String
-  ParamCue18=ApiKeys[9]
-  ParamSigType18=String
-  ParamCue19=ApiKeys[10]
-  ParamSigType19=String
-  MinVariableInputs=2
-  MaxVariableInputs=2
-  MinVariableInputsList2=5
-  MaxVariableInputsList2=5
+  MinVariableInputs=23
+  MaxVariableInputs=23
+  MinVariableInputsList2=6
+  MaxVariableInputsList2=6
   MinVariableOutputs=0
   MaxVariableOutputs=0
-  MinVariableOutputsList2=4
-  MaxVariableOutputsList2=4
-  MinVariableParams=9
-  MaxVariableParams=18
+  MinVariableOutputsList2=12
+  MaxVariableOutputsList2=12
+  MinVariableParams=1
+  MaxVariableParams=10
   Expand=expand_separately
   Expand2=expand_separately
   ProgramTree=Logic
@@ -134,17 +180,17 @@
   CompilerParamCode5=14
   NumFixedParams=1
   Pp1=1
+  Pp2=2
+  Pp3=3
+  Pp4=4
+  Pp5=5
+  Pp6=6
+  Pp7=7
+  Pp8=8
+  Pp9=9
   Pp10=10
   Pp11=11
-  Pp12=12
-  Pp13=13
-  Pp14=14
-  Pp15=15
-  Pp16=16
-  Pp17=17
-  Pp18=18
-  Pp19=19
-  MPp=19
+  MPp=11
   NVStorage=10
   ParamSigType1=String
   SmplCInputCue1=o#
@@ -165,6 +211,70 @@
 [END]
 [BEGIN]
   ObjTp=Dp
+  H=2
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=3
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=4
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=5
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=6
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=7
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=8
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
+  H=9
+  Tp=1
+  HD=False
+  NoS=False
+  VVS=0
+[END]
+[BEGIN]
+  ObjTp=Dp
   H=10
   Tp=1
   HD=False
@@ -174,70 +284,6 @@
 [BEGIN]
   ObjTp=Dp
   H=11
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=12
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=13
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=14
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=15
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=16
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=17
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=18
-  Tp=1
-  HD=False
-  NoS=False
-  VVS=0
-[END]
-[BEGIN]
-  ObjTp=Dp
-  H=19
   Tp=1
   HD=False
   NoS=False
