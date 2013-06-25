@@ -1,4 +1,3 @@
-#SYMBOL_NAME "Prowl Client"
 #CATEGORY "4" // Device Interface
 #DEFAULT_VOLATILE
 #ENABLE_STACK_CHECKING
