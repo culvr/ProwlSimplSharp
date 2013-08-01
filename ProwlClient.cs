@@ -30,7 +30,7 @@ namespace ProwlSimplSharp
         }
 
 
-        public int Send(string app, ushort priority, string url, string subject, string message)
+        public int Send(string app, short priority, string url, string subject, string message)
         {
             string keys = this.ApiKeys;
             

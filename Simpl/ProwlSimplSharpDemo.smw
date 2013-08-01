@@ -1460,6 +1460,8 @@ SmH=29
 RelStat=Release
 ProdLine=Smart Graphics
 DbH=2
+UiH=1
+CsH=1
 EtH=2
 mC=1
 C1=590
@@ -1552,6 +1554,17 @@ Mnf=Crestron
 Mdl=Crestron App
 ]
 [
+ObjTp=Ui
+H=1
+DvH=589
+PNm=C:\Users\andrew\Documents\Visual Studio 2008\Projects\ProwlSimplSharp\ProwlSimplSharp\Simpl\ProwlSimplSharpDemo.vtp
+]
+[
+ObjTp=Cs
+H=1
+DvH=589
+]
+[
 ObjTp=FP
 ]
 [
@@ -1560,6 +1573,20 @@ Nm1=\
 Sx1=0
 Sy1=580
 Mx1=0
+]
+[
+ObjTp=Bw
+H=1
+Lx=0
+Ly=580
+Rx=803
+Ry=1302
+Xm=-1
+Ym=579
+SH=29
+Z=100
+Ht=1
+Hi=1
 ]
 [
 ObjTp=Et
