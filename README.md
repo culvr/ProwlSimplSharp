@@ -8,7 +8,7 @@
 
 Before you begin: You'll need to [register for Prowl](https://www.prowlapp.com/register.php), and generate an [API key](http://www.prowlapp.com/api_settings.php).
 
-1. [Download ProwlSimplSharp](https://github.com/culvr/ProwlSimplSharp/archive/master.zip)
+1. [Download ProwlSimplSharp](https://s3.amazonaws.com/ProwlSimplSharp/ProwlSimplSharpDemo.zip)
 2. Unzip `master.zip`
 2. Open `Simpl/ProwlSimplSharpDemo.smw`
 3. Paste your API Key into the Prowl Client's `ApiKeys[1]` parameter.
