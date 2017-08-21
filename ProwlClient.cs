@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Crestron.SimplSharp;
 using Crestron.SimplSharp.Net.Http;
 using Crestron.SimplSharp.Net.Https;
 
@@ -15,8 +16,8 @@ namespace ProwlSimplSharp
         public ProwlClient() : base()
         {
             _apiKeys = new List<string>();
+            this.PeerVerification = false;
         }
-
 
         private string ApiKeys
         {
@@ -29,9 +30,20 @@ namespace ProwlSimplSharp
             }
         }
 
-
         public int Send(string app, short priority, string url, string subject, string message)
         {
+            if (string.IsNullOrEmpty(app))
+                app = string.Empty;
+
+            if (string.IsNullOrEmpty(url))
+                url = string.Empty;
+
+            if (string.IsNullOrEmpty(subject))
+                subject = string.Empty;
+
+            if (string.IsNullOrEmpty(message))
+                message = string.Empty;
+
             string keys = this.ApiKeys;
             
             if (String.IsNullOrEmpty(keys))
@@ -60,8 +72,9 @@ namespace ProwlSimplSharp
                  HttpsClientResponse response = Dispatch(request);
                  return response.Code;
             }
-            catch (HttpsException)
+            catch (HttpsException e)
             {
+                ErrorLog.Exception("Got exception dispatching Prowl request", e);   
                 return 0;
             }
         }

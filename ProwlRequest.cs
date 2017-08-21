@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Crestron.SimplSharp.Net.Http;
 using Crestron.SimplSharp.Net.Https;
-using Nivloc.Web; // System.Web
+using Crestron.SimplSharp.Net;
 
 namespace ProwlSimplSharp
 {
@@ -35,7 +35,7 @@ namespace ProwlSimplSharp
 
             foreach (var kvp in paramDict)
             {
-                args.Add(String.Format("{0}={1}", HttpUtility.UrlEncode(kvp.Key), HttpUtility.UrlEncode(kvp.Value)));
+                args.Add(String.Format("{0}={1}", HttpUtility.UrlEncode(kvp.Key), HttpUtility. UrlEncode(kvp.Value)));
             }
  
             return "?" + string.Join("&", args.ToArray());
