@@ -44,20 +44,10 @@
     <NoConfig>true</NoConfig>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrestronFTCNet, Version=1.0.4812.34570, Culture=neutral, PublicKeyToken=1099c178b3b54c3b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\ProgramData\Crestron\SDK\CrestronFTCNet.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="HttpUtility, Version=1.0.0.14153, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\HttpUtility.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib" />
-    <Reference Include="Newtonsoft.Json.Compact, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="SimplSharpCustomAttributesInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1099c178b3b54c3b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\ProgramData\Crestron\SDK\Newtonsoft.Json.Compact.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\..\..\..\ProgramData\Crestron\SDK\SimplSharpCustomAttributesInterface.dll</HintPath>
     </Reference>
     <Reference Include="SimplSharpHelperInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1099c178b3b54c3b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -67,37 +57,18 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SqlClient, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="system.drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProwlClient.cs" />
     <Compile Include="ProwlRequest.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ControlSystem.cfg" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <FlavorProperties GUID="{0B4745B0-194B-4BB6-8E21-E9057CA92500}">
-        <ProgramIdTag>ProwlSimplSharp</ProgramIdTag>
-        <SystemName>ProwlSimplSharp</SystemName>
-        <Programmer>
-        </Programmer>
-        <ArchiveFilename>C:\Users\andrew\Documents\Visual Studio 2008\Projects\ProwlSimplSharp\ProwlSimplSharp\bin\ProwlSimplSharp.clz</ArchiveFilename>
-        <AdditionalInfo>
-        </AdditionalInfo>
-        <MinFirmwareVersion>1.007.0017</MinFirmwareVersion>
-        <CompiledOn>7/9/2013 5:09:47 PM</CompiledOn>
-        <ControlSystem>
-        </ControlSystem>
-        <LastSessionName>
-        </LastSessionName>
-        <LastSessionAddress>
-        </LastSessionAddress>
-      </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
 </Project>

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProwlSimplSharp", "ProwlSimplSharp.csproj", "{B9037066-9FEB-4A37-8E15-5AD73C4FB4F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProwlSimplSharp.Test", "Test\ProwlSimplSharp.Test.csproj", "{79CE3278-ACE6-45AE-AD6D-BA5CA238681C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +13,6 @@ Global
 		{B9037066-9FEB-4A37-8E15-5AD73C4FB4F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9037066-9FEB-4A37-8E15-5AD73C4FB4F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9037066-9FEB-4A37-8E15-5AD73C4FB4F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79CE3278-ACE6-45AE-AD6D-BA5CA238681C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79CE3278-ACE6-45AE-AD6D-BA5CA238681C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79CE3278-ACE6-45AE-AD6D-BA5CA238681C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79CE3278-ACE6-45AE-AD6D-BA5CA238681C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
