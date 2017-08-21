@@ -8,23 +8,31 @@
 
 Before you begin: You'll need to [register for Prowl](https://www.prowlapp.com/register.php), and generate an [API key](http://www.prowlapp.com/api_settings.php).
 
-1. [Download ProwlSimplSharp](https://s3.amazonaws.com/ProwlSimplSharp/ProwlSimplSharpDemo.zip)
-2. Unzip `master.zip`
-2. Open `Simpl/ProwlSimplSharpDemo.smw`
-3. Paste your API Key into the Prowl Client's `ApiKeys[1]` parameter.
-4. Compile & Upload.
-5. Connect and Pulse `open_garage` with Simpl Debugger.
-
+1. Open `Simpl/ProwlSimplSharpDemo.smw`
+2. Paste your API Key into the Prowl Client's `ApiKeys[1]` parameter.
+3. Open and compile `Simpl/ProwlSimplSharpDemo.vtp`
+3. Compile & upload program and touch panel project
 
 ## Requirements
 
-* Crestron 3-Series processor. **v1.007.0019+**
-* Crestron Simpl Sharp Library **v1.0.0149**+
-* SIMPL Windows **v4.02.16+**
-* SIMPL+  **v4.02.15+**
-* Device Database **v50.00.004.00+**
-* Crestron Database  **v39.05.002.00+**
+SIMPL Windows:  4.07.03
+SIMPL+  4.04.01
 
+INCLUDE4_2SERIES.DAT Version Information:
+        (2 Series)  : 1.80
+
+INCLUDE4.DAT Version Information:
+        (3 Series)  : 2.05.037
+
+Symlib2.Tio 1037  07/28/2017 10:48:06AM 
+  iodev.tio 1037  07/28/2017 10:48:06AM 
+
+Other Crestron SW:
+
+        Device Database: 86.00.003.00
+        Crestron Database:  63.06.002.00
+        Crestron Toolbox: 2.43.601.00
+        SIMPL+ Cross Compiler: 1.3
 
 ## Contributors
 
