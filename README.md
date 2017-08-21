@@ -15,24 +15,19 @@ Before you begin: You'll need to [register for Prowl](https://www.prowlapp.com/r
 
 ## Requirements
 
-SIMPL Windows:  4.07.03
-SIMPL+  4.04.01
+* SIMPL Windows:  4.07.03
+* SIMPL+  4.04.01
 
-INCLUDE4_2SERIES.DAT Version Information:
-        (2 Series)  : 1.80
+* INCLUDE4_2SERIES.DAT Version Information: (2 Series)  : 1.80
+* INCLUDE4.DAT Version Information: (3 Series)  : 2.05.037
 
-INCLUDE4.DAT Version Information:
-        (3 Series)  : 2.05.037
+* Symlib2.Tio 1037  07/28/2017 10:48:06AM 
+* iodev.tio 1037  07/28/2017 10:48:06AM
 
-Symlib2.Tio 1037  07/28/2017 10:48:06AM 
-  iodev.tio 1037  07/28/2017 10:48:06AM 
-
-Other Crestron SW:
-
-        Device Database: 86.00.003.00
-        Crestron Database:  63.06.002.00
-        Crestron Toolbox: 2.43.601.00
-        SIMPL+ Cross Compiler: 1.3
+* Device Database: 86.00.003.00
+* Crestron Database:  63.06.002.00
+* Crestron Toolbox: 2.43.601.00
+* SIMPL+ Cross Compiler: 1.3
 
 ## Contributors
 
